@@ -3,7 +3,7 @@
 %define synology_version 3.0.3
 %define synology_release 12689
 
-Name:     synology-drive
+Name:     synology-drive-noextra
 Version:  %{synology_version}
 Release:  %{synology_release}%{?dist}
 Summary:  Unofficial RPM build of Synology Drive Client without extra dependencies
@@ -16,7 +16,6 @@ Requires: glibc
 Requires: glib2
 Requires: gtk2
 
-# Same package for GNOME
 Conflicts: synology-drive
 
 %description

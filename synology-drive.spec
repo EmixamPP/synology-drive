@@ -23,6 +23,8 @@ Requires: nautilus-extensions
 # For tray icon on Gnome
 Requires: gnome-shell-extension-appindicator
 
+Conflicts: synology-drive-noextra
+
 %description
 Synology Drive Client allows you to sync your computers with Synology NAS and back up the computer to the NAS.
 
