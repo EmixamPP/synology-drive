@@ -19,7 +19,7 @@ sudo dnf copr enable emixampp/synology-drive
 sudo dnf --refresh install synology-drive
 ```
 
-### Method 2: download a RPM package that I built
+### Method 2: download from GitHub
 1. Go to <https://github.com/EmixamPP/synology-drive/releases>
 2. Download the version of your choice (I recommend the most recent one)
 3. Unzip and execute `sudo dnf localinstall synology-drive-*.x86_64.rpm`
