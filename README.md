@@ -29,6 +29,6 @@ The build instructions of the RPM package are contained in the `synology-drive.s
 
 As mentioned this is an unofficial build, therefore this RPM package is not verified by, affiliated with, or supported by Synology Inc.
 
-I solemnly declare that no action has been performed on the source code of the software. Therefore, all its licenses are retained.
+I solemnly declare that no action has been performed on the source code of the software. Therefore, all its licences are retained.
 
 Synology Drive Client is registered under the Copyright Synology Inc. <https://www.synology.com/en-global/company/legal/terms_EULA>.
