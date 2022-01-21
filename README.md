@@ -21,8 +21,8 @@ sudo dnf --refresh install synology-drive
 
 ### Method 2: download from GitHub
 1. Go to <https://github.com/EmixamPP/synology-drive/releases>
-2. Download the version of your choice (I recommend the most recent one)
-3. Unzip and execute `sudo dnf localinstall synology-drive-*.x86_64.rpm`
+2. Download the RPM package of your choice (I recommend the most recent one)
+3. Execute `sudo dnf localinstall synology-drive-*.x86_64.rpm`
 
 ## Legal information
 The build instructions of the RPM package are contained in the `synology-drive.spec` file. And, as you can see, this is just a wrapper of the installation instructions of the official `.deb` package.
