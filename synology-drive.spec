@@ -68,5 +68,4 @@ cp -r usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 
 %changelog
 * Fri Jan 21 2022 Maxime dirksen <emixampp@fedoraproject.org> - 3.0.3-12689
-- Version 3.0.3-12689 of Synology Drive
-
+- Version 3.0.3-12689 of Synology Drive Client

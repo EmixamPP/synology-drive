@@ -5,8 +5,8 @@ Unofficial RPM package of Synology Drive Client <https://www.synology.com>.
 Since the package provided by FlatHub is not 100% functional and the method of converting deb to rpm by Alien requires a lot of manipulation. I decided to create myself a clean and 100% functional RPM package for Synology Drive Client.
 
 I have include the file explorer Nautilus as dependency in order to have access to the share menu and to have the file sync status indicator (like on Windows or Ubuntu).\
-I also have include a gnome shell extension as dependency in order to see the tray icon (works natively with KDE).\
-If you want a build without the gnome extension and/or Nautilus, feel free to open an issue.
+I also have include a GNOME shell extension as dependency in order to see the tray icon (works natively with KDE).\
+I have build a second package for user's which didn't use GNOME. It does not contain the two dependencies mentioned above (they can be installed later if you want).
 
 ## Installation
 If you have previously installed Synology Drive Client with Alien or Flatpak (i.e. from another source than my repo), please ensure that they are uninstalled.
@@ -14,10 +14,9 @@ If you have previously installed Synology Drive Client with Alien or Flatpak (i.
 ### Method 1: install from COPR repo (recommended to get updates)
 Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/synology-drive/).
 
-```
-sudo dnf copr enable emixampp/synology-drive
-sudo dnf --refresh install synology-drive
-```
+1. `sudo dnf copr enable emixampp/synology-drive`
+2. For GNOME: `sudo dnf --refresh install synology-drive`
+3. For other desktop environments: `sudo dnf --refresh install synology-drive-noextra`
 
 ### Method 2: download from GitHub
 1. Go to <https://github.com/EmixamPP/synology-drive/releases>
