@@ -11,15 +11,15 @@ If you want a build without the gnome extension and/or Nautilus, feel free to op
 ## Installation
 If you have previously installed Synology Drive Client with Alien or Flatpak (i.e. from another source than my repo), please ensure that they are uninstalled.
 
-### Method 1, download from COPR repo (recommended to get updates)
+### Method 1: install from COPR repo (recommended to get updates)
 Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/synology-drive/).
 
-``` shell
+```
 sudo dnf copr enable emixampp/synology-drive
 sudo dnf --refresh install synology-drive
 ```
 
-### Method 2, download a RPM package that I built
+### Method 2: download a RPM package that I built
 1. Go to <https://github.com/EmixamPP/synology-drive/releases>
 2. Download the version of your choice (I recommend the most recent one)
 3. Unzip and execute `sudo dnf localinstall synology-drive-*.x86_64.rpm`
