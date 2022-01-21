@@ -8,7 +8,7 @@ Version:  %{synology_version}
 Release:  %{synology_release}%{?dist}
 Summary:  Unofficial RPM build of Synology Drive Client
 License:  custom
-Arch: x86_64
+BuildArch: x86_64
 
 Source0:  https://global.download.synology.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/x86_64/synology-drive-client-%{synology_release}.x86_64.deb
 
