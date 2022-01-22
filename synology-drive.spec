@@ -1,16 +1,15 @@
-%global   debug_package %{nil}
+%global synology_version 3.0.3
+%global synology_release 12689
 
-%define synology_version 3.0.3
-%define synology_release 12689
+Name:      synology-drive
+Version:   %{synology_version}
+Release:   %{synology_release}%{?dist}
+Summary:   Unofficial RPM build of Synology Drive Client
+License:   Multiple, see https://www.synology.com/en-global/company/legal/terms_EULA
+URL:       https://www.synology.com/
 
-Name:     synology-drive
-Version:  %{synology_version}
-Release:  %{synology_release}%{?dist}
-Summary:  Unofficial RPM build of Synology Drive Client
-License:  custom
 BuildArch: x86_64
-
-Source0:  https://global.download.synology.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/x86_64/synology-drive-client-%{synology_release}.x86_64.deb
+Source0:   https://global.download.synology.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/x86_64/synology-drive-client-%{synology_release}.x86_64.deb
 
 AutoReqProv: no
 Requires: glibc
@@ -18,11 +17,11 @@ Requires: glib2
 Requires: gtk2
 
 # For Nautilus integration
-Requires: nautilus
-Requires: nautilus-extensions
+Recommends: nautilus
+Recommends: nautilus-extensions
 
-# For tray icon on Gnome
-Requires: gnome-shell-extension-appindicator
+# For tray icon on GNOME
+Recommends: gnome-shell-extension-appindicator
 
 Conflicts: synology-drive-noextra
 

@@ -1,16 +1,15 @@
-%global   debug_package %{nil}
+%global synology_version 3.0.3
+%global synology_release 12689
 
-%define synology_version 3.0.3
-%define synology_release 12689
+Name:      synology-drive-noextra
+Version:   %{synology_version}
+Release:   %{synology_release}%{?dist}
+Summary:   Unofficial RPM build of Synology Drive Client without extra dependencies
+License:   Multiple, see https://www.synology.com/en-global/company/legal/terms_EULA
+URL:       https://www.synology.com/
 
-Name:     synology-drive-noextra
-Version:  %{synology_version}
-Release:  %{synology_release}%{?dist}
-Summary:  Unofficial RPM build of Synology Drive Client without extra dependencies
-License:  custom
 BuildArch: x86_64
-
-Source0:  https://global.download.synology.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/x86_64/synology-drive-client-%{synology_release}.x86_64.deb
+Source0:   https://global.download.synology.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/x86_64/synology-drive-client-%{synology_release}.x86_64.deb
 
 AutoReqProv: no
 Requires: glibc
@@ -29,7 +28,7 @@ tar xf data.tar.xz
 %install
 # software
 mkdir -p %{buildroot}/opt/Synology/
-cp -r opt/Synology/SynologyDrive/ %{buildroot}/opt/Synology/
+cp -rp opt/Synology/SynologyDrive/ %{buildroot}/opt/Synology/
 
 # executable
 mkdir -p %{buildroot}%{_bindir}/
@@ -43,7 +42,7 @@ install -Dm 644 usr/lib/nautilus/extensions-3.0/libnautilus-drive-extension.so -
 mkdir -p %{buildroot}%{_datarootdir}/applications/
 install -Dm 644 usr/share/applications/synology-drive.desktop -t %{buildroot}%{_datarootdir}/applications/
 mkdir -p %{buildroot}%{_datarootdir}/icons/
-cp -r usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
+cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 
 %files
 %license opt/Synology/SynologyDrive/LICENSE.txt
