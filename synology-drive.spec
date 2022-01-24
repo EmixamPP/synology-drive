@@ -35,7 +35,7 @@ tar xf data.tar.xz
 %install
 # software
 mkdir -p %{buildroot}/opt/Synology/
-cp -r opt/Synology/SynologyDrive/ %{buildroot}/opt/Synology/
+cp -rp opt/Synology/SynologyDrive/ %{buildroot}/opt/Synology/
 
 # executable
 mkdir -p %{buildroot}%{_bindir}/
@@ -49,7 +49,7 @@ install -Dm 644 usr/lib/nautilus/extensions-3.0/libnautilus-drive-extension.so -
 mkdir -p %{buildroot}%{_datarootdir}/applications/
 install -Dm 644 usr/share/applications/synology-drive.desktop -t %{buildroot}%{_datarootdir}/applications/
 mkdir -p %{buildroot}%{_datarootdir}/icons/
-cp -r usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
+cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 
 %files
 %license opt/Synology/SynologyDrive/LICENSE.txt
