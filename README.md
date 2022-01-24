@@ -24,10 +24,8 @@ Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/syno
 3. Execute `sudo dnf localinstall synology-drive-*.x86_64.rpm`
 
 ## Legal information
-The build instructions of the RPM package are contained in the `synology-drive.spec` file. And, as you can see, this is just a wrapper of the installation instructions of the official `.deb` package.
-
-As mentioned this is an unofficial build, therefore this RPM package is not verified by, affiliated with, or supported by Synology Inc.
-
-I solemnly declare that no action has been performed on the source code of the software. Therefore, all its licences are retained.
+This is an unofficial build. Therefore, this RPM package is not verified by, affiliated with, or supported by Synology Inc.
 
 Synology Drive Client is registered under the Copyright Synology Inc. <https://www.synology.com/en-global/company/legal/terms_EULA>.
+
+This project has been authorized by Synology Inc.
