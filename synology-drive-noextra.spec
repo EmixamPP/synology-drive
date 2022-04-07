@@ -26,6 +26,8 @@ ar x %{_sourcedir}/synology-drive-client-%{synology_release}.x86_64.deb data.tar
 tar xf data.tar.xz
 
 %install
+export QA_RPATHS=$(( 0x0002|0x0020 )) # ignore rpath error since 3.1.0-12920
+
 # software
 mkdir -p %{buildroot}/opt/Synology/
 cp -rp opt/Synology/SynologyDrive/ %{buildroot}/opt/Synology/
@@ -62,6 +64,8 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
 
 %changelog
-* Fri Jan 21 2022 Maxime dirksen <emixampp@fedoraproject.org> - 3.0.3-12689
+* Thu Apr 7 2022 Maxime Dirksen <emixampp@fedoraproject.org> - 3.1.0-12920
+- Version 3.1.0-12920 of Synology Drive Client
+* Fri Jan 21 2022 Maxime Dirksen <emixampp@fedoraproject.org> - 3.0.3-12689
 - Version 3.0.3-12689 of Synology Drive Client
 
