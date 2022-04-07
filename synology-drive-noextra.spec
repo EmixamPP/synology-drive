@@ -1,5 +1,5 @@
-%global synology_version 3.0.3
-%global synology_release 12689
+%global synology_version 3.1.0
+%global synology_release 12920
 
 Name:      synology-drive-noextra
 Version:   %{synology_version}
