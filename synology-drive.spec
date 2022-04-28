@@ -1,5 +1,5 @@
 %global synology_version 3.1.0
-%global synology_release 12920
+%global synology_release 12923
 
 
 Name:      synology-drive
@@ -32,6 +32,10 @@ Synology Drive Client allows you to sync your computers with Synology NAS and ba
 %prep
 ar x %{_sourcedir}/synology-drive-client-%{synology_release}.x86_64.deb data.tar.xz
 tar xf data.tar.xz
+
+# disable auto update
+sed -i "s|https://utyupdate.synology.com||" opt/Synology/SynologyDrive/package/cloudstation/conf/update.conf
+sed -i "s|/getUpdate||" opt/Synology/SynologyDrive/package/cloudstation/conf/update.conf
 
 %install
 export QA_RPATHS=$(( 0x0002|0x0020 )) # ignore rpath error since 3.1.0-12920
@@ -72,7 +76,9 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
 
 %changelog
-* Thu Apr 7 2022 Maxime Dirksen <emixampp@fedoraproject.org> - 3.1.0-12920
+* Thu Apr 28 2022 Maxime Dirksen <copr@emixam.be> - 3.1.0-12923
+- Version 3.1.0-12923 of Synology Drive Client
+* Thu Apr 7 2022 Maxime Dirksen <copr@emixam.be> - 3.1.0-12920
 - Version 3.1.0-12920 of Synology Drive Client
-* Fri Jan 21 2022 Maxime dirksen <emixampp@fedoraproject.org> - 3.0.3-12689
+* Fri Jan 21 2022 Maxime dirksen <copr@emixam.be> - 3.0.3-12689
 - Version 3.0.3-12689 of Synology Drive Client

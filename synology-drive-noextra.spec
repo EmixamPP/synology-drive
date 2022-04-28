@@ -1,5 +1,5 @@
 %global synology_version 3.1.0
-%global synology_release 12920
+%global synology_release 12923
 
 Name:      synology-drive-noextra
 Version:   %{synology_version}
@@ -24,6 +24,10 @@ Synology Drive Client allows you to sync your computers with Synology NAS and ba
 %prep
 ar x %{_sourcedir}/synology-drive-client-%{synology_release}.x86_64.deb data.tar.xz
 tar xf data.tar.xz
+
+# disable auto update
+sed -i "s|https://utyupdate.synology.com||" opt/Synology/SynologyDrive/package/cloudstation/conf/update.conf
+sed -i "s|/getUpdate||" opt/Synology/SynologyDrive/package/cloudstation/conf/update.conf
 
 %install
 export QA_RPATHS=$(( 0x0002|0x0020 )) # ignore rpath error since 3.1.0-12920
