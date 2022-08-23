@@ -18,10 +18,22 @@ Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/syno
 2. For GNOME: `sudo dnf --refresh install synology-drive`
 3. For other desktop environments: `sudo dnf --refresh install synology-drive-noextra`
 
-### Method 2: download from GitHub
-1. Go to <https://github.com/EmixamPP/synology-drive/releases>
-2. Download the RPM package of your choice (I recommend the most recent one)
-3. Execute `sudo dnf localinstall synology-drive-*.x86_64.rpm`
+### Method 2: build the package locally (no updates)
+1. Install build tools : `sudo dnf install rpm-build rpmdevtools`
+2. `git clone https://github.com/EmixamPP/synology-drive.git`
+3. `cd synology-drive`
+4. Optional, if you want to change the version:
+   1. Consult the [release notes](https://www.synology.com/en-global/releaseNote/SynologyDriveClient) and choose the desired version
+   2. Edit the two first lines of `synology-drive.spec` or `synology-drive-noextra.spec`, depending on whether you are running GNOME or another desktop environement. 
+5. For GNOME:
+   1. `spectool -g -R synology-drive.spec`
+   2. `rpmbuild -ba synology-drive.spec`
+   3. `sudo dnf install ~/rpmbuild/RPMS/x86_64/synology-drive-*.x86_64.rpm`
+6. For other desktop environments: 
+   1. `spectool -g -R synology-drive-noextra.spec`
+   2. `rpmbuild -ba synology-drive-noextra.spec`
+   3. `sudo dnf install ~/rpmbuild/RPMS/x86_64/synology-drive-noextra-*.x86_64.rpm`
+7. Clean build root : `rm -r ~/rpmbuild`
 
 ## Legal information
 This is an unofficial build. Therefore, this RPM package is not verified by, affiliated with, or supported by Synology Inc.
