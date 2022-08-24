@@ -23,7 +23,7 @@ Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/syno
 2. Download the RPM package of your choice depedning on: 
    1. The desired version (I recommend the most recent one)
    2. The prefix synology-drive for GNOME, or synology-drive-noextra for the other desktop environements
-   3. The suffix corresponding to your Linux distribution (where X is a digit): 
+   3. The suffix corresponding to your Linux distribution (where X is a digit) (if your distro is not in the table, try a package for Fedora): 
       | Suffix     | Distro              |
       | ---        | ---                 |
       | elXXX      | Fedora eln          |
