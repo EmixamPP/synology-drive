@@ -1,5 +1,5 @@
-%global synology_version 3.1.0
-%global synology_release 12923
+%global synology_version 3.2.0
+%global synology_release 13238
 
 Name:      synology-drive-noextra
 Version:   %{synology_version}
@@ -68,11 +68,11 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
 
 %changelog
+* Wed Oct 26 2022 Maxime Dirksen <copr@emixam.be> - 3.2.0-13238
+- Version 3.2.0-13238 of Synology Drive Client
 * Thu Apr 28 2022 Maxime Dirksen <copr@emixam.be> - 3.1.0-12923
 - Version 3.1.0-12923 of Synology Drive Client
 * Thu Apr 7 2022 Maxime Dirksen <copr@emixam.be> - 3.1.0-12920
 - Version 3.1.0-12920 of Synology Drive Client
 * Fri Jan 21 2022 Maxime dirksen <copr@emixam.be> - 3.0.3-12689
 - Version 3.0.3-12689 of Synology Drive Client
-
-
