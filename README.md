@@ -18,12 +18,28 @@ Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/syno
 2. For GNOME: `sudo dnf --refresh install synology-drive`
 3. For other desktop environments: `sudo dnf --refresh install synology-drive-noextra`
 
-### Method 2: build the package locally (no updates)
+### Method 2: download a specific version from GitHub (no update)
+1. Go to the [release page](https://github.com/EmixamPP/synology-drive/releases)
+2. Download the RPM package of your choice depedning on: 
+   1. The desired version (I recommend the most recent one)
+   2. The prefix synology-drive for GNOME, or synology-drive-noextra for the other desktop environements
+   3. The suffix corresponding to your Linux distribution (where X is a digit) (if your distro is not in the table, try a package for Fedora): 
+      | Suffix     | Distro              |
+      | ---        | ---                 |
+      | elXXX      | Fedora eln          |
+      | elX        | Centos-stream X     |
+      | fcXX       | Fedora XX           |
+      | mgaX       | Mageia X            |
+      | suse.lpXXX | openSUSE Leap XX.X  |
+      | suse.tw    | openSUSE Tumbleweed |
+3. Execute `sudo dnf install synology-drive-*.x86_64.rpm`
+
+### Method 3: build the package locally (no update)
 1. Install build tools : `sudo dnf install rpm-build rpmdevtools`
 2. `git clone https://github.com/EmixamPP/synology-drive.git`
 3. `cd synology-drive`
 4. Optional, if you want to change the version:
-   1. Consult the [release notes](https://www.synology.com/en-global/releaseNote/SynologyDriveClient) and choose the desired version
+   1. Consult the [release notes](https://www.synology.com/en-global/releaseNote/SynologyDriveClient) and choose the desired version (>= 3.0.0-12663)
    2. Edit the two first lines of `synology-drive.spec` or `synology-drive-noextra.spec`, depending on whether you are running GNOME or another desktop environement. 
 5. For GNOME:
    1. `spectool -g -R synology-drive.spec`
