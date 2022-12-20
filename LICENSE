@@ -1,0 +1,15 @@
+This is an unofficial build of Synology Drive Client. 
+The rpm packages and the spec files, are not verified by, affiliated with, or supported by Synology Inc.
+Synology Drive Client is registered under the Copyright Synology Inc.
+For more information, please refer to https://www.synology.com/en-global/company/legal/terms_EULA.
+
+This is free and unencumbered spec files and rpm builds released into the public domain.
+Anyone is free to copy, modify, publish, use, distribute these rpm builds and spec files.
+
+THE RPMS AND SPEC FILES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE RPMS AND SPEC FILES OR THE USE OR
+OTHER DEALINGS IN THE RPMS AND SPEC FILES.
