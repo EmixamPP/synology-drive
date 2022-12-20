@@ -56,8 +56,6 @@ Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/syno
 -->
 
 ## Legal information
-This is an unofficial build. Therefore, this RPM package is not verified by, affiliated with, or supported by Synology Inc.
-
-Synology Drive Client is registered under the Copyright Synology Inc. <https://www.synology.com/en-global/company/legal/terms_EULA>.
+Consult the [LICENSE](https://github.com/EmixamPP/synology-drive/blob/main/LICENSE).
 
 This project has been authorized by Synology Inc.
