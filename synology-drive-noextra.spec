@@ -1,5 +1,5 @@
-%global synology_version 3.2.0
-%global synology_release 13258
+%global synology_version 3.2.1
+%global synology_release 13271
 
 Name:      synology-drive-noextra
 Version:   %{synology_version}
@@ -43,6 +43,8 @@ install -Dm 755 usr/bin/synology-drive -t %{buildroot}%{_bindir}/
 # nautilus (installed in case the user wants to use Nautilus)
 mkdir -p %{buildroot}%{_libdir}/nautilus/extensions-3.0/
 install -Dm 644 usr/lib/nautilus/extensions-3.0/libnautilus-drive-extension.so -t %{buildroot}%{_libdir}/nautilus/extensions-3.0/
+mkdir -p %{buildroot}%{_libdir}/nautilus/extensions-4/
+install -Dm 644 usr/lib/nautilus/extensions-4/libnautilus-drive-extension-4.so -t %{buildroot}%{_libdir}/nautilus/extensions-4/
 
 # desktop
 mkdir -p %{buildroot}%{_datarootdir}/applications/
@@ -57,6 +59,7 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 /opt/Synology/SynologyDrive/
 %{_bindir}/synology-drive
 %{_libdir}/nautilus/extensions-3.0/libnautilus-drive-extension.so
+%{_libdir}/nautilus/extensions-4/libnautilus-drive-extension-4.so
 %{_datarootdir}/applications/synology-drive.desktop
 %{_datarootdir}/icons/hicolor/16x16/apps/synology-drive.png
 %{_datarootdir}/icons/hicolor/24x24/apps/synology-drive.png
@@ -68,6 +71,8 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
 
 %changelog
+* Tue Dec 20 2022 Maxime Dirksen <copr@emixam.be> - 3.2.1-13271
+- Version 3.2.1-13271 of Synology Drive Client
 * Thu Nov 24 2022 Maxime Dirksen <copr@emixam.be> - 3.2.0-13258
 - Version 3.2.0-13258 of Synology Drive Client
 * Wed Oct 26 2022 Maxime Dirksen <copr@emixam.be> - 3.2.0-13238
