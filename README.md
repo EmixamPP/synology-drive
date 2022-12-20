@@ -13,6 +13,8 @@ I have build a second package for user's which didn't use GNOME. It does not con
 ## Installation
 If you have previously installed Synology Drive Client with Alien or Flatpak (i.e. from another source than my repo), please ensure that they are uninstalled.
 
+If you like the project, do not hesitate to star the repository to support me, thank you!
+
 ### Method 1: install from COPR repo (recommended to get updates)
 Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/synology-drive/).
 
