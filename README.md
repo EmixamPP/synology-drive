@@ -27,7 +27,7 @@ Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/syno
 2. `git clone https://github.com/EmixamPP/synology-drive.git`
 3. `cd synology-drive`
 4. Optional, if you want to change the version:
-   1. Consult the [release notes](https://www.synology.com/en-global/releaseNote/SynologyDriveClient) and choose the desired version (>= 3.0.0-12663)
+   1. Consult the [release notes](https://www.synology.com/en-global/releaseNote/SynologyDriveClient) and choose the desired version (>= 3.2.1-13271)
    2. Edit the two first lines of `synology-drive.spec` or `synology-drive-noextra.spec`, depending on whether you are running GNOME or another desktop environement. 
 5. For GNOME:
    1. `spectool -g -R synology-drive.spec`
