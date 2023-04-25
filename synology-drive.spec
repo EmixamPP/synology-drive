@@ -1,5 +1,5 @@
-%global synology_version 3.2.1
-%global synology_release 13271
+%global synology_version 3.3.0
+%global synology_release 15082
 
 Name:      synology-drive
 Version:   %{synology_version}
@@ -9,6 +9,7 @@ License:   Multiple, see https://www.synology.com/en-global/company/legal/terms_
 URL:       https://www.synology.com/
 
 BuildArch: x86_64
+ExclusiveArch: x86_64
 Source0:   https://global.download.synology.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/x86_64/synology-drive-client-%{synology_release}.x86_64.deb
 
 AutoReqProv: no
@@ -78,13 +79,17 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
 
 %changelog
-* Tue Dec 20 2022 Maxime Dirksen <copr@emixam.be> - 3.2.1-13271
-- Version 3.2.1-13271 of Synology Drive Client
-* Wed Oct 26 2022 Maxime Dirksen <copr@emixam.be> - 3.2.0-13238
+* Tue Dec 20 2022 Maxime Dirksen <dev@emixam.be> - 3.2.1-13271
+- Version 3.2.1-13271 of Synology Drive Clientcopr
+copr
+copr
+copr
+copr
+* Wed Oct 26 2022 Maxime Dirksen <dev@emixam.be> - 3.2.0-13238
 - Version 3.2.0-13238 of Synology Drive Client
-* Thu Apr 28 2022 Maxime Dirksen <copr@emixam.be> - 3.1.0-12923
+* Thu Apr 28 2022 Maxime Dirksen <dev@emixam.be> - 3.1.0-12923
 - Version 3.1.0-12923 of Synology Drive Client
-* Thu Apr 7 2022 Maxime Dirksen <copr@emixam.be> - 3.1.0-12920
+* Thu Apr 7 2022 Maxime Dirksen <dev@emixam.be> - 3.1.0-12920
 - Version 3.1.0-12920 of Synology Drive Client
-* Fri Jan 21 2022 Maxime dirksen <copr@emixam.be> - 3.0.3-12689
+* Fri Jan 21 2022 Maxime dirksen <dev@emixam.be> - 3.0.3-12689
 - Version 3.0.3-12689 of Synology Drive Client

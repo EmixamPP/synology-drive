@@ -39,24 +39,6 @@ Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/syno
    3. `sudo dnf install ~/rpmbuild/RPMS/x86_64/synology-drive-noextra-*.x86_64.rpm`
 7. Clean build root : `rm -r ~/rpmbuild`
 
-<!--- No more maintained
-### Method 3: download a specific version from GitHub (no update)
-1. Go to the [release page](https://github.com/EmixamPP/synology-drive/releases)
-2. Download the RPM package of your choice depedning on: 
-   1. The desired version (I recommend the most recent one)
-   2. The prefix synology-drive for GNOME, or synology-drive-noextra for the other desktop environements
-   3. The suffix corresponding to your Linux distribution (where X is a digit) (if your distro is not in the table, try a package for Fedora): 
-      | Suffix     | Distro              |
-      | ---        | ---                 |
-      | elXXX      | Fedora eln          |
-      | elX        | Centos-stream X     |
-      | fcXX       | Fedora XX           |
-      | mgaX       | Mageia X            |
-      | suse.lpXXX | openSUSE Leap XX.X  |
-      | suse.tw    | openSUSE Tumbleweed |
-3. Execute `sudo dnf install synology-drive-*.x86_64.rpm`
--->
-
 ## Legal information
 Consult the [LICENSE](https://github.com/EmixamPP/synology-drive/blob/main/LICENSE).
 
