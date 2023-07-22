@@ -1,0 +1,40 @@
+name: Update
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 7 * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch release version
+        run: |
+            VERSION_RELEASE=$(curl -s https://www.synology.com/en-global/releaseNote/SynologyDriveClient | grep -oPm1 'Version: \K[\d.]+-\d+')
+
+            VERSION=$(echo $VERSION_RELEASE | cut -d'-' -f1)
+            echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+            RELEASE=$(echo $VERSION_RELEASE | cut -d'-' -f2)
+            echo "RELEASE=$RELEASE" >> "$GITHUB_ENV"
+
+      - name: Modify files
+        run: |
+            sed -i "s@^%global synology_version .*@%global synology_version $VERSION@" synology-drive{,-noextra}.spec
+            sed -i "s@^%global synology_release .*@%global synology_release $RELEASE@" synology-drive{,-noextra}.spec
+            
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+            title: "chore(deps): update to ${{ env.VERSION }}-${{ env.RELEASE }}"
+            branch: "v${{ env.VERSION }}-${{ env.RELEASE }}"
+            commit-message: "chore(deps): update to ${{ env.VERSION }}-${{ env.RELEASE }}"
+            body: |
+              Update to ${{ env.VERSION }}-${{ env.RELEASE }}.
+
+              This PR has been created automatically.
+            assignees: "EmixamPP"
+            delete-branch: true
+     
