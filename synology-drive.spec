@@ -80,11 +80,7 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 
 %changelog
 * Tue Dec 20 2022 Maxime Dirksen <dev@emixam.be> - 3.2.1-13271
-- Version 3.2.1-13271 of Synology Drive Clientcopr
-copr
-copr
-copr
-copr
+- Version 3.2.1-13271 of Synology Drive Client
 * Wed Oct 26 2022 Maxime Dirksen <dev@emixam.be> - 3.2.0-13238
 - Version 3.2.0-13238 of Synology Drive Client
 * Thu Apr 28 2022 Maxime Dirksen <dev@emixam.be> - 3.1.0-12923
