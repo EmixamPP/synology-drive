@@ -22,8 +22,12 @@ jobs:
 
       - name: Modify files
         run: |
-            sed -i "s@^%global synology_version .*@%global synology_version $VERSION@" synology-drive{,-noextra}.spec
-            sed -i "s@^%global synology_release .*@%global synology_release $RELEASE@" synology-drive{,-noextra}.spec
+            sed -i "s/^%global synology_version .*/%global synology_version $VERSION/w changelog1.txt" synology-drive{,-noextra}.spec
+            sed -i "s/^%global synology_release .*/%global synology_release $RELEASE/w changelog2.txt" synology-drive{,-noextra}.spec
+
+            if [ -s changelog1.txt ] || [ -s changelog2.txt ]; then
+              sed -i "/%changelog/a * $(date '+%a %B %d %Y') Maxime Dirksen <dev@emixam.be> - $VERSION-$RELEASE\n- Version $VERSION-$RELEASE of Synology Drive Client" synology-drive{,-noextra}.spec
+            fi
             
       - name: Create PR
         uses: peter-evans/create-pull-request@v5
