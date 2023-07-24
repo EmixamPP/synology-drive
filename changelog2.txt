@@ -1,0 +1,2 @@
+%global synology_release 15082
+%global synology_release 15082
