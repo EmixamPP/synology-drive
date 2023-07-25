@@ -72,6 +72,8 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
 
 %changelog
+* Tue July 25 2023 Maxime Dirksen <dev@emixam.be> - 3.3.0-15082
+- Version 3.3.0-15082 of Synology Drive Client
 * Tue March 25 2023 Maxime Dirksen <dev@emixam.be> - 3.3.0-15082
 - Version 3.3.0-15082 of Synology Drive Client
 * Tue Dec 20 2022 Maxime Dirksen <dev@emixam.be> - 3.2.1-13271
