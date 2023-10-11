@@ -32,7 +32,7 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v5
         with:
-            title: "chore(deps): update to ${{ env.VERSION }}-${{ env.RELEASE }}"
+            title: "build(deps): update to ${{ env.VERSION }}-${{ env.RELEASE }}"
             branch: "v${{ env.VERSION }}-${{ env.RELEASE }}"
             commit-message: "chore(deps): update to ${{ env.VERSION }}-${{ env.RELEASE }}"
             body: |
