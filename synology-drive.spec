@@ -10,7 +10,7 @@ URL:       https://www.synology.com/
 
 BuildArch: x86_64
 ExclusiveArch: x86_64
-Source0:   https://global.download.synology.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/x86_64/synology-drive-client-%{synology_release}.x86_64.deb
+Source0: https://global.synologydownload.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/synology-drive-client-%{synology_release}.x86_64.deb
 
 AutoReqProv: no
 Requires: glibc
@@ -79,7 +79,7 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
 
 %changelog
-* Wed October 11 2023 Maxime Dirksen <dev@emixam.be> - 3.4.0-15721
+* Wed Oct 11 2023 Maxime Dirksen <dev@emixam.be> - 3.4.0-15721
 - Version 3.4.0-15721 of Synology Drive Client
 * Tue Dec 20 2022 Maxime Dirksen <dev@emixam.be> - 3.2.1-13271
 - Version 3.2.1-13271 of Synology Drive Client
