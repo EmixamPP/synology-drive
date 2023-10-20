@@ -40,5 +40,6 @@ jobs:
 
               This PR has been created automatically.
             assignees: "EmixamPP"
+            labels: dependencies
             delete-branch: true
      
