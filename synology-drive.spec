@@ -9,7 +9,6 @@ License:   Multiple, see https://www.synology.com/en-global/company/legal/terms_
 URL:       https://www.synology.com/
 
 BuildArch: x86_64
-ExclusiveArch: x86_64
 Source0: https://global.synologydownload.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/synology-drive-client-%{synology_release}.x86_64.deb
 
 AutoReqProv: no
