@@ -12,7 +12,7 @@ jobs:
 
       - name: Fetch release version
         run: |
-            VERSION_RELEASE=$(curl -s https://www.synology.com/en-global/releaseNote/SynologyDriveClient | grep -oPm1 'Version: \K[\d.]+-\d+')
+            VERSION_RELEASE=$(curl -s https://archive.synology.com/download/Utility/SynologyDriveClient | grep -oP '\d+\.\d+\.\d+-\d+' | head -n 1)
 
             VERSION=$(echo $VERSION_RELEASE | cut -d'-' -f1)
             echo "VERSION=$VERSION" >> "$GITHUB_ENV"
