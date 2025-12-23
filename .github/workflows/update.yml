@@ -25,16 +25,16 @@ jobs:
               exit 1
             fi
 
-      - name: Modify files
+      - name: Modify file
         run: |
-            sed -i "s@^%global synology_version .*@%global synology_version $VERSION@" synology-drive{,-noextra}.spec
-            sed -i "s@^%global synology_release .*@%global synology_release $RELEASE@" synology-drive{,-noextra}.spec
+            sed -i "s@^%global synology_version .*@%global synology_version $VERSION@" synology-drive.spec
+            sed -i "s@^%global synology_release .*@%global synology_release $RELEASE@" synology-drive.spec
 
             if [ ! -z "$(git status -s)" ]; then
               sed -i "/%changelog/a * $(date '+%a %b %d %Y') Maxime Dirksen <dev@emixam.be> - $VERSION-$RELEASE\n- Version $VERSION-$RELEASE of Synology Drive Client" synology-drive{,-noextra}.spec
             fi
             
-      - name: Create PR
+      - name: Create PR if needed
         uses: peter-evans/create-pull-request@v8
         with:
             title: "build(deps): update to ${{ env.VERSION }}-${{ env.RELEASE }}"

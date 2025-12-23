@@ -11,21 +11,29 @@ URL:       https://www.synology.com/
 Source0: https://global.synologydownload.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/synology-drive-client-%{synology_release}.x86_64.deb
 
 AutoReqProv: no
-Requires: glibc
-Requires: glib2
-Requires: gtk2
 
-# For Nautilus integration
-Recommends: nautilus
-Recommends: nautilus-extensions
-
-# For tray icon on GNOME
-Recommends: gnome-shell-extension-appindicator
-
-Conflicts: synology-drive-noextra
+Obsoletes: synology-drive-noextra < 4.0.1-17885
 
 %description
 Synology Drive Client allows you to sync your computers with Synology NAS and back up the computer to the NAS.
+
+%package nautilus
+Summary:        Nautilus integrations for %{name}
+Requires:       %{name} = %{version}-%{release}
+Requires:       nautilus
+Requires:       nautilus-extensions
+
+%description nautilus
+This package provides Nautilus integration for %{name}.
+
+%package gnome
+Summary:        GNOME integrations for %{name}
+Requires:       %{name}
+Requires:       %{name}-nautilus
+Requires:       gnome-shell-extension-appindicator
+
+%description gnome
+This package provides GNOME shell integration for %{name}.
 
 %prep
 ar x %{_sourcedir}/synology-drive-client-%{synology_release}.x86_64.deb data.tar.xz
@@ -46,9 +54,7 @@ cp -rp opt/Synology/SynologyDrive/ %{buildroot}/opt/Synology/
 mkdir -p %{buildroot}%{_bindir}/
 install -Dm 755 usr/bin/synology-drive -t %{buildroot}%{_bindir}/
 
-# nautilus
-mkdir -p %{buildroot}%{_libdir}/nautilus/extensions-3.0/
-install -Dm 644 usr/lib/nautilus/extensions-3.0/libnautilus-drive-extension.so -t %{buildroot}%{_libdir}/nautilus/extensions-3.0/
+# nautilus extension
 mkdir -p %{buildroot}%{_libdir}/nautilus/extensions-4/
 install -Dm 644 usr/lib/nautilus/extensions-4/libnautilus-drive-extension-4.so -t %{buildroot}%{_libdir}/nautilus/extensions-4/
 
@@ -64,8 +70,6 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 
 /opt/Synology/SynologyDrive/
 %{_bindir}/synology-drive
-%{_libdir}/nautilus/extensions-3.0/libnautilus-drive-extension.so
-%{_libdir}/nautilus/extensions-4/libnautilus-drive-extension-4.so
 %{_datarootdir}/applications/synology-drive.desktop
 %{_datarootdir}/icons/hicolor/16x16/apps/synology-drive.png
 %{_datarootdir}/icons/hicolor/24x24/apps/synology-drive.png
@@ -75,6 +79,11 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/128x128/apps/synology-drive.png
 %{_datarootdir}/icons/hicolor/256x256/apps/synology-drive.png
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
+
+%files nautilus
+%{_libdir}/nautilus/extensions-4/libnautilus-drive-extension-4.so
+
+%files gnome
 
 %changelog
 * Sat Nov 15 2025 Maxime Dirksen <dev@emixam.be> - 4.0.1-17885
