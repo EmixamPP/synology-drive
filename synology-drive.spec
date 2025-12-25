@@ -1,4 +1,4 @@
-%global synology_version 4.0.1
+%global synology_version 4.0.2
 %global synology_release 17885
 
 Name:      synology-drive
@@ -8,7 +8,7 @@ Summary:   Unofficial RPM build of Synology Drive Client
 License:   Multiple, see https://www.synology.com/en-global/company/legal/terms_EULA
 URL:       https://www.synology.com/
 
-Source0: https://global.synologydownload.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/synology-drive-client-%{synology_release}.x86_64.deb
+Source0: https://global.synologydownload.com/download/Utility/SynologyDriveClient/4.0.1-%{synology_release}/Ubuntu/Installer/synology-drive-client-%{synology_release}.x86_64.deb
 
 AutoReqProv: no
 
