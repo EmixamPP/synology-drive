@@ -1,39 +1,55 @@
-%global synology_version 4.0.2
+%global synology_version 4.0.1
 %global synology_release 17885
 
-Name:      synology-drive
-Version:   %{synology_version}
-Release:   %{synology_release}%{?dist}
-Summary:   Unofficial RPM build of Synology Drive Client
-License:   Multiple, see https://www.synology.com/en-global/company/legal/terms_EULA
-URL:       https://www.synology.com/
-
-Source0: https://global.synologydownload.com/download/Utility/SynologyDriveClient/4.0.1-%{synology_release}/Ubuntu/Installer/synology-drive-client-%{synology_release}.x86_64.deb
+Name:       synology-drive
+Version:    %{synology_version}
+Release:    %{synology_release}.6%{?dist}
+Summary:    Unofficial RPM build of Synology Drive Client
+License:    Multiple, see https://www.synology.com/en-global/company/legal/terms_EULA
+URL:        https://www.synology.com/
+Source0:    https://global.synologydownload.com/download/Utility/SynologyDriveClient/%{synology_version}-%{synology_release}/Ubuntu/Installer/synology-drive-client-%{synology_release}.x86_64.deb
 
 AutoReqProv: no
+Recommends: %{name}-gnome
 
-Obsoletes: synology-drive-noextra < 4.0.1-17885
+BuildRequires: binutils
+BuildRequires: xz
+BuildRequires: tar
 
 %description
 Synology Drive Client allows you to sync your computers with Synology NAS and back up the computer to the NAS.
 
+%package base
+Summary:     Unofficial RPM build of Synology Drive Client
+Conflicts:   synology-drive-noextra
+Obsoletes:   synology-drive-noextra <= 4.0.1-17885
+AutoReqProv: no
+Requires:    glibc >= 2.19
+Requires:    glib2 >= 2.16.0
+Requires:    gtk2 >= 2.12.0
+
+%description base
+Synology Drive Client allows you to sync your computers with Synology NAS and back up the computer to the NAS.
+
 %package nautilus
-Summary:        Nautilus integrations for %{name}
-Requires:       %{name} = %{version}-%{release}
-Requires:       nautilus
-Requires:       nautilus-extensions
+Summary:    Nautilus integrations for %{name}
+AutoReqProv: no
+Requires:   %{name}-base = %{version}-%{release}
+Requires:   nautilus >= 43.0
+Requires:   nautilus-extensions >= 43.0
 
 %description nautilus
 This package provides Nautilus integration for %{name}.
 
 %package gnome
-Summary:        GNOME integrations for %{name}
-Requires:       %{name}
-Requires:       %{name}-nautilus
-Requires:       gnome-shell-extension-appindicator
+Summary:    GNOME integrations for %{name}
+AutoReqProv: no
+Requires:   %{name}-base
+Requires:   %{name}-nautilus
+Requires:   gnome-shell-extension-appindicator
 
 %description gnome
-This package provides GNOME shell integration for %{name}.
+This package provides GNOME integrations for %{name}.
 
 %prep
 ar x %{_sourcedir}/synology-drive-client-%{synology_release}.x86_64.deb data.tar.xz
@@ -65,9 +81,11 @@ mkdir -p %{buildroot}%{_datarootdir}/icons/
 cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 
 %files
+%{nil}
+
+%files base
 %license opt/Synology/SynologyDrive/LICENSE.txt
 %doc usr/share/doc/synology-drive/changelog.gz
-
 /opt/Synology/SynologyDrive/
 %{_bindir}/synology-drive
 %{_datarootdir}/applications/synology-drive.desktop
@@ -84,6 +102,7 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_libdir}/nautilus/extensions-4/libnautilus-drive-extension-4.so
 
 %files gnome
+%{nil}
 
 %changelog
 * Sat Nov 15 2025 Maxime Dirksen <dev@emixam.be> - 4.0.1-17885
@@ -116,5 +135,5 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 - Version 3.1.0-12923 of Synology Drive Client
 * Thu Apr 7 2022 Maxime Dirksen <dev@emixam.be> - 3.1.0-12920
 - Version 3.1.0-12920 of Synology Drive Client
-* Fri Jan 21 2022 Maxime dirksen <dev@emixam.be> - 3.0.3-12689
+* Fri Jan 21 2022 Maxime Dirksen <dev@emixam.be> - 3.0.3-12689
 - Version 3.0.3-12689 of Synology Drive Client

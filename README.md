@@ -29,7 +29,7 @@ Page link : [COPR package](https://copr.fedorainfracloud.org/coprs/emixampp/syno
    1. Consult the [release notes](https://www.synology.com/en-global/releaseNote/SynologyDriveClient) and choose the desired version (>= 3.2.1-13271)
    2. Edit the two first lines of `synology-drive.spec`.
 5. `spectool -g -R synology-drisve.spec`
-6. `rpmbuild -ba --noclean synology-drive.spec`
+6. `rpmbuild -bb --noclean synology-drive.spec`
 7. `sudo dnf install ~/rpmbuild/RPMS/x86_64/synology-drive-*.rpm`
 8. If everything is ok, you can clean the build root : `rm -r ~/rpmbuild`
 
