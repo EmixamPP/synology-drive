@@ -1,5 +1,5 @@
-%global synology_version 4.0.1
-%global synology_release 17885
+%global synology_version 4.0.2
+%global synology_release 17886
 
 Name:      synology-drive
 Version:   %{synology_version}
@@ -77,6 +77,8 @@ cp -rp usr/share/icons/hicolor/ %{buildroot}%{_datarootdir}/icons/
 %{_datarootdir}/icons/hicolor/512x512/apps/synology-drive.png
 
 %changelog
+* Wed Jan 14 2026 Maxime Dirksen <dev@emixam.be> - 4.0.2-17886
+- Version 4.0.2-17886 of Synology Drive Client
 * Sat Nov 15 2025 Maxime Dirksen <dev@emixam.be> - 4.0.1-17885
 - Version 4.0.1-17885 of Synology Drive Client
 * Mon Oct 20 2025 Maxime Dirksen <dev@emixam.be> - 4.0.0-17877
