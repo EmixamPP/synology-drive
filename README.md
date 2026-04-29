@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=EmixamPP&project=synology-drive&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 # <p align=center>synology-drive</p>
 
 Unofficial RPM package of Synology Drive Client <https://www.synology.com>.
