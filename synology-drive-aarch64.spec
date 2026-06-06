@@ -1,5 +1,5 @@
-%global synology_version 4.0.2
-%global synology_release 17889
+%global synology_version 4.0.3
+%global synology_release 17892
 
 Name:      synology-drive
 Version:   %{synology_version}
@@ -92,6 +92,8 @@ EOF
 /usr/lib/binfmt.d/synology-drive.conf
 
 %changelog
+* Sat Jun 06 2026 Michael Leithold <dMichael.Leithold@web.de> - 4.0.3-17892
+- Version 4.0.3-17892 of Synology Drive Client
 * Sat Apr 11 2026 Michael Leithold <Michael.Leithold@web.de> - 4.0.2-17889
 - Version 4.0.2-17889 for Aarch64
 * Fri Jan 23 2026 Maxime Dirksen <dev@emixam.be> - 4.0.2-17889
