@@ -15,9 +15,14 @@ jobs:
             VERSION_RELEASE=$(curl -s https://archive.synology.com/download/Utility/SynologyDriveClient | grep -oP '\d+\.\d+\.\d+-\d+' | head -n 1)
 
             VERSION=$(echo $VERSION_RELEASE | cut -d'-' -f1)
-            echo "VERSION=$VERSION" >> "$GITHUB_ENV"
-
             RELEASE=$(echo $VERSION_RELEASE | cut -d'-' -f2)
+            
+            if [ -z "$VERSION" ] || [ -z "$RELEASE" ]; then
+              echo "ERROR: VERSION or RELEASE is empty"
+              exit 1
+            fi
+            
+            echo "VERSION=$VERSION" >> "$GITHUB_ENV"
             echo "RELEASE=$RELEASE" >> "$GITHUB_ENV"
 
       - name: Modify files
